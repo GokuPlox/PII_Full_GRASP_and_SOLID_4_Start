@@ -15,14 +15,15 @@ namespace Full_GRASP_And_SOLID
 
         public Product FinalProduct { get; set; }
 
-        public void AddStep(Step step)
-        {
-            this.steps.Add(step);
-        }
-
         public void RemoveStep(Step step)
         {
             this.steps.Remove(step);
+        }
+
+        public void AddStep(Product input,double quantity, Equipment equipment, int time)
+        {
+            Step step = new Step(input, quantity, equipment, time);
+            this.steps.Add(step);
         }
 
         // Agregado por SRP
